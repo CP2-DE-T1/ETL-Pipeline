@@ -8,7 +8,7 @@ import requests
 import zlib
 
 def extract_cp2_log():
-    # mysql 에서 extract
+    # mysql 에서 extract 할때
     # conn = pymysql.connect(host=DB_HOST,user=DB_USER,password=DB_PASSWORD,db=DB_NAME,charset='utf8')
     # cur = conn.cursor(pymysql.cursors.DictCursor)
     # sql = 'SELECT * FROM user';
@@ -33,7 +33,7 @@ def extract_cp2_log():
     data=pd.read_csv('cp2_transform.csv')
     data.to_csv('s3://hssong-cp2-bucket/cp2_log.csv')
     
-
+# 추후 분산처리를 위한 task 분리용 코드
 # def transform_cp2_log():
 #     data=pd.read_csv('cp2_log.csv')
 #     for i in range(len(data)):
